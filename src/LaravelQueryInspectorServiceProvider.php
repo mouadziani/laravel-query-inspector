@@ -2,24 +2,33 @@
 
 namespace Mouadziani\LaravelQueryInspector;
 
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Mouadziani\LaravelQueryInspector\Commands\LaravelQueryInspectorCommand;
+use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
-class LaravelQueryInspectorServiceProvider extends PackageServiceProvider
+/**
+ * Service provider
+ */
+class LaravelQueryInspectorServiceProvider extends BaseServiceProvider
 {
-    public function configurePackage(Package $package): void
+    /**
+     * Bootstrap the application services.
+     *
+     * @return void
+     */
+    public function boot()
     {
-        /*
-         * This class is a Package Service Provider
-         *
-         * More info: https://github.com/spatie/laravel-package-tools
-         */
-        $package
-            ->name('laravel-query-inspector')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel-query-inspector_table')
-            ->hasCommand(LaravelQueryInspectorCommand::class);
+        \Illuminate\Database\Eloquent\Builder::macro('toRawSql', function() {
+            $builer = $this->getQuery();
+            return vsprintf(str_replace(array('?'), array('\'%s\''), $builer->toSql()), $builer->getBindings());
+        });
+    }
+
+    /**
+     * Register the application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
     }
 }
