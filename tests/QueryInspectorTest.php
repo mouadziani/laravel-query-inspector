@@ -2,10 +2,10 @@
 
 namespace Mouadziani\LaravelQueryInspector\Tests;
 
-class ExampleTest extends TestCase
+class QueryInspectorTest extends TestCase
 {
     /** @test */
-    public function true_is_true()
+    public function test()
     {
         $this->assertTrue(true);
     }
