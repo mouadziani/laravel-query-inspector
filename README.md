@@ -1,29 +1,5 @@
-# The missing laravel helper that allows you to ispect your eloquent queries with their binding parameters
-
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/mouadziani/laravel-query-inspector.svg?style=flat-square)](https://packagist.org/packages/mouadziani/laravel-query-inspector)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/mouadziani/laravel-query-inspector/run-tests?label=tests)](https://github.com/mouadziani/laravel-query-inspector/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/mouadziani/laravel-query-inspector/Check%20&%20fix%20styling?label=code%20style)](https://github.com/mouadziani/laravel-query-inspector/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/mouadziani/laravel-query-inspector.svg?style=flat-square)](https://packagist.org/packages/mouadziani/laravel-query-inspector)
-
----
-This repo can be used to scaffold a Laravel package. Follow these steps to get started:
-
-1. Press the "Use template" button at the top of this repo to create a new repo with the contents of this laravel-query-inspector
-2. Run "./configure-laravel-query-inspector.sh" to run a script that will replace all placeholders throughout all the files
-3. Remove this block of text.
-4. Have fun creating your package.
-5. If you need help creating a package, consider picking up our <a href="https://laravelpackage.training">Laravel Package Training</a> video course.
----
-
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-query-inspector.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-query-inspector)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+# Laravel Query Inspector
+The missing laravel helper that allows you to ispect your eloquent queries with their binding parameters
 
 ## Installation
 
@@ -33,30 +9,16 @@ You can install the package via composer:
 composer require mouadziani/laravel-query-inspector
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --provider="Mouadziani\LaravelQueryInspector\LaravelQueryInspectorServiceProvider" --tag="laravel-query-inspector-migrations"
-php artisan migrate
-```
-
 You can publish the config file with:
 ```bash
 php artisan vendor:publish --provider="Mouadziani\LaravelQueryInspector\LaravelQueryInspectorServiceProvider" --tag="laravel-query-inspector-config"
 ```
 
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
 ## Usage
 
 ```php
-$laravel-query-inspector = new Mouadziani\LaravelQueryInspector();
-echo $laravel-query-inspector->echoPhrase('Hello, Spatie!');
+$query = Model::toRawSql();
+dd($query);
 ```
 
 ## Testing
