@@ -2,9 +2,9 @@
 
 namespace Mouadziani\LaravelQueryInspector;
 
+use Mouadziani\LaravelQueryInspector\Commands\LaravelQueryInspectorCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Mouadziani\LaravelQueryInspector\Commands\LaravelQueryInspectorCommand;
 
 class LaravelQueryInspectorServiceProvider extends PackageServiceProvider
 {

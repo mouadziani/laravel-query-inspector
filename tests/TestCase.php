@@ -3,8 +3,8 @@
 namespace Mouadziani\LaravelQueryInspector\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
 use Mouadziani\LaravelQueryInspector\LaravelQueryInspectorServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
