@@ -1,0 +1,62 @@
+{
+    "name": "mouadziani/laravel-query-inspector",
+    "description": "The missing laravel helper that allows you to ispect your eloquent queries with their binding parameters",
+    "keywords": [
+        "mouadziani",
+        "laravel",
+        "laravel-query-inspector"
+    ],
+    "homepage": "https://github.com/mouadziani/laravel-query-inspector",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "MouadZIANI",
+            "email": "mouad.ziani1997@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "spatie/laravel-package-tools": "^1.4.3",
+        "illuminate/contracts": "^8.37"
+    },
+    "require-dev": {
+        "brianium/paratest": "^6.2",
+        "nunomaduro/collision": "^5.3",
+        "orchestra/testbench": "^6.15",
+        "phpunit/phpunit": "^9.3",
+        "spatie/laravel-ray": "^1.23",
+        "vimeo/psalm": "^4.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mouadziani\\LaravelQueryInspector\\": "src",
+            "Mouadziani\\LaravelQueryInspector\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mouadziani\\LaravelQueryInspector\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "psalm": "vendor/bin/psalm",
+        "test": "./vendor/bin/testbench package:test --parallel --no-coverage",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mouadziani\\LaravelQueryInspector\\LaravelQueryInspectorServiceProvider"
+            ],
+            "aliases": {
+                "LaravelQueryInspector": "Mouadziani\\LaravelQueryInspector\\LaravelQueryInspectorFacade"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
