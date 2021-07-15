@@ -15,8 +15,6 @@ composer require mouadziani/laravel-query-inspector
 ## Usage
 
 ```php
-$eloquentQuery = Model::where('attribute', 'value');
-
 // Uisng toSql()
 $query = Model::where('attribute', 'value')->toSql();
 dd($query); // select * from models where attribute = ?
