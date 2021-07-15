@@ -2,9 +2,9 @@
 
 namespace Mouadziani\LaravelQueryInspector;
 
-use Illuminate\Support\ServiceProvider as BaseServiceProvider;
-use \Illuminate\Database\Eloquent\Builder as EloquentBuilder;
+use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Database\Query\Builder as QueryBuilder;
+use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
 /**
  * Service provider
@@ -18,9 +18,10 @@ class LaravelQueryInspectorServiceProvider extends BaseServiceProvider
      */
     public function boot()
     {
-        EloquentBuilder::macro('toRawSql', function() {
+        EloquentBuilder::macro('toRawSql', function () {
             $builer = $this->getQuery();
-            return vsprintf(str_replace(array('?'), array('\'%s\''), $builer->toSql()), $builer->getBindings());
+
+            return vsprintf(str_replace(['?'], ['\'%s\''], $builer->toSql()), $builer->getBindings());
         });
 
         QueryBuilder::macro('toRawSql', function () {
