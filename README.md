@@ -9,16 +9,11 @@ You can install the package via composer:
 composer require mouadziani/laravel-query-inspector
 ```
 
-You can publish the config file with:
-```bash
-php artisan vendor:publish --provider="Mouadziani\LaravelQueryInspector\LaravelQueryInspectorServiceProvider" --tag="laravel-query-inspector-config"
-```
-
 ## Usage
 
 ```php
-$query = Model::toRawSql();
-dd($query);
+$query = Model::where('attribute', 'value')->toRawSql();
+dd($query); // select * from models where attribute = 'value'
 ```
 
 ## Testing
