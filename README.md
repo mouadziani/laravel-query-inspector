@@ -15,11 +15,11 @@ composer require mouadziani/laravel-query-inspector
 ## Usage
 
 ```php
-// Uisng toSql()
+// Using toSql()
 $query = Model::where('attribute', 'value')->toSql();
 dd($query); // select * from models where attribute = ?
 
-// Uisng toRawSql()
+// Using toRawSql()
 $query = Model::where('attribute', 'value')->toRawSql();
 dd($query); // select * from models where attribute = 'value'
 ```
