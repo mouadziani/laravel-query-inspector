@@ -2,7 +2,7 @@
 The missing laravel helper that allows you to ispect your eloquent queries with it's bind parameters
 
 ## Motivations
-Let's say you want to get the generated sql query from an eloquent query, by default in Laravel you can use the ``toSql()`` method, but in some situations you may need to get the generated query with its values instead of just getting the prepared statement, in this case you can use this package as well as a helper that which will give you the generated sql query with its bind parameters as a plain sql query just by calling ``toRawSql()`` from any eloquent query.
+Let's say you want to get the generated sql query from an eloquent query, by default in Laravel you can use the ``toSql()`` method, but in some situations you may need to get the generated query with its values instead of just getting the prepared statement, in this case you can use this package as well as a helper which will give you the generated sql query with its bind parameters as a plain sql query just by calling ``toRawSql()`` from any eloquent query.
 
 ## Installation
 
